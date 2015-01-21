@@ -55,7 +55,7 @@ public class dialogHelp extends JDialog
 		lblDbMysql.setBounds(42, 193, 201, 15);
 		getContentPane().add(lblDbMysql);
 		
-		JLabel lblIslpSearchVersion = new JLabel("ISLP Search  Version 0.7b  (Version Multi-utilisateurs 16/11/2014)");
+		JLabel lblIslpSearchVersion = new JLabel("ISLP Search  Version 0.8  (Version Multi-utilisateurs 21/01/2015)");
 		lblIslpSearchVersion.setForeground(Color.ORANGE);
 		lblIslpSearchVersion.setBounds(42, 124, 517, 15);
 		getContentPane().add(lblIslpSearchVersion);
