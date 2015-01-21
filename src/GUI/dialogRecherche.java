@@ -123,7 +123,7 @@ public class dialogRecherche extends JDialog implements ActionListener,MouseList
 				
 					String temp = String.format("<tr>"
 			    			+ "<td>numero recherché: %s</td>"
-			    			+ "<td>%s</td>"
+			    			+ "<td><b>%s</b></td>"
 			    			+ "<td align='right'>numero islp: %s / %s</td>"
 			    			+ "</tr>",t[0],t[1],t[2],t[3]);
 					
