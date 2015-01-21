@@ -1,0 +1,25 @@
+
+
+*  (FAIT )Créer les recherches parametriques (avec joker)
+
+* (FAIT )Afficher le nombre de tuple sur la page principale
+
+* Afficher la mise a jour ISLP sur la page principale
+
+ * (FAIT )créer le paramètrage de mysql (login et password)
+
+* (FAIT )créer l'option de backup de la base de donnée
+
+* (FAIT) Afficher les résultats sous forme d'html
+
+* ( FAIT) Import de plusieurs fichiers en meme temps
+
+* verification du fichier import
+
+* ( FAIT )créer les 4 champs unique pour éviter d'importer deux fois les mêmes valeurs
+
+* (FAIT )Créer le copier/coller dans le module recherche
+
+* (Fait) Finir le module d'impression
+
+* 
