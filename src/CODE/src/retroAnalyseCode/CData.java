@@ -24,6 +24,18 @@ public class CData
 				case "Judiciaire non roulage" : this.setType("JUDI");
 												break;
 												
+				case "Apostille" : this.setType("APOS");
+				break;
+				
+				case "Rapport d'information" : this.setType("RIRS");
+				break;
+				
+				case "Courrier entrant" : this.setType("COUEN");
+				break;
+				
+				case "Enquete" : this.setType("ENQS");
+				break;
+												
 				case "INFO" : this.setType("INFO");
 							   break;
 							   
