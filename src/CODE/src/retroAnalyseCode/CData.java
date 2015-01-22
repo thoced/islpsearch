@@ -33,6 +33,12 @@ public class CData
 				case "Courrier entrant" : this.setType("COUEN");
 				break;
 				
+				case "Administratif" : this.setType("ADMI");
+				break;
+				
+				case "Circulation" : this.setType("JUDI");
+				break;
+				
 				case "Enquete" : this.setType("ENQS");
 				break;
 												
