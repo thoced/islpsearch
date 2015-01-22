@@ -42,6 +42,10 @@ public class CData
 				case "Avertissement (PVA)" : this.setType("JUDI");
 				break;
 				
+				case "Accident de roulage" : this.setType("JUDI");
+				break;
+				
+				
 				case "Enquête" : this.setType("ENQS");
 				break;
 												
