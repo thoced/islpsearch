@@ -27,7 +27,7 @@ public class CData
 				case "Apostille" : this.setType("APOS");
 				break;
 				
-				case "Rapport d'information" : this.setType("RIRS");
+				case "Rapport information" : this.setType("RIRS");
 				break;
 				
 				case "Courrier entrant" : this.setType("COUEN");
@@ -39,7 +39,10 @@ public class CData
 				case "Circulation" : this.setType("JUDI");
 				break;
 				
-				case "Enquete" : this.setType("ENQS");
+				case "Avertissement (PVA)" : this.setType("JUDI");
+				break;
+				
+				case "Enquête" : this.setType("ENQS");
 				break;
 												
 				case "INFO" : this.setType("INFO");
