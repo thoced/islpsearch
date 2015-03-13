@@ -116,16 +116,23 @@ public class dialogRecherche extends JDialog implements ActionListener,MouseList
 						+ "<TABLE border='0' width='100%'>");
 				
 				backupResultat = ret;
-				
+				// 19810713
 				for(String r : ret)
 				{
 					String[] t = r.split("\t");
+					
+					// création de la date de naissance correcte
+					String annee = t[6].substring(0, 4);
+					String mois = t[6].substring(4,6);
+					String jour = t[6].substring(6,8);
+					String dd = String.format("%s/%s/%s", jour,mois,annee);
 				
 					String temp = String.format("<tr>"
-			    			+ "<td>numero recherché: %s</td>"
+			    			+ "<td> %s</td>"
 			    			+ "<td><b>%s</b></td>"
 			    			+ "<td align='right'>numero islp: %s / %s</td>"
-			    			+ "</tr>",t[0],t[1],t[2],t[3]);
+			    			+ "<td>%s %s %s</td>"
+			    			+ "</tr>",t[0],t[1],t[2],t[3],t[4],t[5],dd);
 					
 					builder.append(temp);
 				}
@@ -238,7 +245,7 @@ public class dialogRecherche extends JDialog implements ActionListener,MouseList
 		//textResult = new JTextArea();
 		textResult.setFont(new Font("Arial", Font.PLAIN, 12));
 		JScrollPane scrollPaneResult = new JScrollPane(textResult);
-		scrollPaneResult.setBounds(244, 55, 643, 405);
+		scrollPaneResult.setBounds(244, 55, 768, 405);
 		panel.add(scrollPaneResult);
 		
 		buttonPrint = new JButton("Impression");
@@ -284,6 +291,7 @@ public class dialogRecherche extends JDialog implements ActionListener,MouseList
 				temp = temp.replace(".", "");
 				temp = temp.replace("/", "");
 				temp = temp.replace("+", "");
+				temp = temp.replace(" ","");
 				textContact.setText(temp);
 			}
 		});

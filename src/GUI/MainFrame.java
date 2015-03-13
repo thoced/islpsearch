@@ -103,7 +103,7 @@ public class MainFrame {
 		frmIslpSearch = new JFrame();
 		frmIslpSearch.getContentPane().setBackground(Color.LIGHT_GRAY);
 		frmIslpSearch.setBackground(Color.LIGHT_GRAY);
-		frmIslpSearch.setTitle("ISLP Search  Version 0.8  (Version Multi-utilisateurs 21/01/2015)");
+		frmIslpSearch.setTitle("ISLP Search  Version 0.9  (Version Multi-utilisateurs 13/03/2015)");
 		frmIslpSearch.addWindowFocusListener(new WindowFocusListener() {
 			public void windowGainedFocus(WindowEvent arg0)
 			{

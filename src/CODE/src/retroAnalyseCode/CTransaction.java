@@ -1,6 +1,7 @@
 package CODE.src.retroAnalyseCode;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,14 +12,14 @@ import javax.swing.JOptionPane;
 public class CTransaction 
 {
 	private Connection con = null;
-	private String sqlInsert = "insert into db_islp.t_islp_info (contact,type,annee,numero) values (?,?,?,?)";
+	private String sqlInsert = "insert into db_islp.t_islp_info (contact,type,annee,numero,nom,prenom,datenaissance) values (?,?,?,?,?,?,?)";
 	private String sqlDelete = "delete from db_islp.t_islp_search";
 	private String sqlInsertToSearch = "insert into db_islp.temp_islp_search (contact) values (?)";
 	
-	private String sqlSearch = "select contact,type,annee,numero from db_islp.t_islp_info where contact IN ( select contact from db_islp.temp_islp_search) order by contact";
-	private String sqlSearchLeft = "select contact,type,annee,numero from db_islp.t_islp_info where SUBSTR(contact,%d) IN ( select SUBSTR(contact,%d) from db_islp.temp_islp_search) order by contact";
+	private String sqlSearch = "select contact,type,annee,numero,nom,prenom,datenaissance from db_islp.t_islp_info where contact IN ( select contact from db_islp.temp_islp_search) order by contact";
+	private String sqlSearchLeft = "select contact,type,annee,numero,nom,prenom,datenaissance from db_islp.t_islp_info where SUBSTR(contact,%d) IN ( select SUBSTR(contact,%d) from db_islp.temp_islp_search) order by contact";
 	
-	private String sqlGetRecords = "select contact,type,annee,numero from db_islp.t_islp_info ORDER by annee";
+	private String sqlGetRecords = "select contact,type,annee,numero,nom,prenom,datenaissance from db_islp.t_islp_info ORDER by annee";
 	
 
 	private String  temporydrop = "DROP TEMPORARY TABLE IF EXISTS `db_islp`.`temp_islp_search`";
@@ -57,8 +58,11 @@ public class CTransaction
 				String type = result.getString(2);
 				String annee = result.getString(3);
 				String numero = result.getString(4);
+				String nom = result.getString(5);
+				String prenom = result.getString(6);
+				String datenaissance = result.getString(7);
 				
-				sbuilder.append(String.format("%s	%s	%s	%s\n",contact,type,annee,numero));
+				sbuilder.append(String.format("%s	%s	%s	%s	%s	%s	%s\n",contact,type,annee,numero,nom,prenom,datenaissance));
 				i++;
 			}
 			
@@ -76,6 +80,9 @@ public class CTransaction
 			ps.setString(2, data.getType());
 			ps.setString(3, data.getDate());
 			ps.setString(4, data.getNumero());
+			ps.setString(5, data.getNom());
+			ps.setString(6, data.getPrenom());
+			ps.setString(7, data.getDatenaissance());
 			
 			// exécution de la requete
 			ps.execute();
@@ -183,6 +190,9 @@ public class CTransaction
 		    	String type    	= result.getString(2);
 		    	String annee 	= result.getString(3);
 		    	String numero	= result.getString(4);
+		    	String nom 		= result.getString(5);
+				String prenom 	= result.getString(6);
+				String datenaissance = result.getString(7);
 		    	// sous forme html
 		    	//ret[cpt] = String.format("numero recherché : %s - type : %s - numero islp : %s-%s \n",contact,type,numero,annee);
 		    /*	ret[cpt] = String.format("<tr>"
@@ -191,7 +201,7 @@ public class CTransaction
 		    			+ "<td align='right'>numero islp: %s / %s</td>"
 		    			+ "</tr>",contact,type,numero,annee);*/
 		    	
-		    	ret[cpt] = String.format("%s	%s	%s	%s",contact,type,numero,annee);
+		    	ret[cpt] = String.format("%s	%s	%s	%s	%s	%s	%s",contact,type,numero,annee,nom,prenom,datenaissance);
 		    	
 		    	cpt++;
 		    }

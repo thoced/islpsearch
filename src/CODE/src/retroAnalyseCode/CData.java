@@ -6,11 +6,15 @@ public class CData
 	private String type;
 	private String date;
 	private String numero;
+	private String nom;
+	private String prenom;
+	private String datenaissance;
+	
 	
 	public CData(String[] d)
 	{
-		if(d.length != 4)
-			return;
+		//if(d.length != 4)
+			//return;
 		
 		 this.setContact(d[0]);
 		
@@ -59,10 +63,51 @@ public class CData
 									break;
 			}
 		
-		date = d[2];
-		numero= d[3];
+		this.setDate(d[2]);
+		this.setNumero(d[3]);
+		// nom
+		this.setNom(d[4]);
+		// prenom
+		this.setPrenom(d[5]);
+		// datenaissance
+		this.setDatenaissance(d[6]);
+		
 	}
 	
+	
+	
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+
+
+	public String getDatenaissance() {
+		return datenaissance;
+	}
+
+
+
+	public void setDatenaissance(String datenaissance) {
+		this.datenaissance = datenaissance;
+	}
+
+
+
 	public String getContact() {
 		return contact;
 	}

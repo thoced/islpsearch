@@ -49,7 +49,14 @@ public class CResultPrint implements Printable
 		 {
 			 String l = listeTexte[i];
 			 String[] f = l.split("\t");
-			 String phrase = String.format("numero recherché : %s - Type : %s , numero : %s/%s", f[0],f[1],f[2],f[3]);
+			 
+			// création de la date de naissance correcte
+				String annee = f[6].substring(0, 4);
+				String mois = f[6].substring(4,6);
+				String jour = f[6].substring(6,8);
+				String dd = String.format("%s/%s/%s", jour,mois,annee);
+			 
+			 String phrase = String.format("%s - Type : %s , numero : %s/%s  %s %s %s", f[0],f[1],f[2],f[3],f[4],f[5],dd);
 			 
 			 g2d.drawString(phrase, 10, cpt);
 			 cpt += ECARD;

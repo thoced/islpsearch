@@ -14,6 +14,9 @@ CREATE  TABLE IF NOT EXISTS `db_islp`.`t_islp_info` (
   `type` CHAR(8) NULL ,
   `annee` CHAR(4) NULL ,
   `numero` CHAR(12) NULL ,
+  `nom` VARCHAR(48) NULL ,
+  `prenom` VARCHAR(48) NULL ,
+  'datenaissance' CHAR(12) NULL,
   PRIMARY KEY (`id`) )
 ENGINE = MyISAM;
 
