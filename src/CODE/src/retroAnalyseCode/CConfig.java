@@ -19,13 +19,13 @@ public class CConfig
 	private String pathDirectoryConfig;
 	private String pathFileConfig;
 	
+	
 	private String login;
 	private String password;
 	private String driver;
 	private String url;
 	
-	
-	
+
 	public String getLogin() {
 		return login;
 	}
@@ -70,6 +70,7 @@ public class CConfig
 		password = prop.getProperty("password");
 		driver = prop.getProperty("driver");
 		url = prop.getProperty("url");
+		
 	}
 	
 	public void saveConfig() throws IOException
@@ -82,6 +83,7 @@ public class CConfig
 		prop.setProperty("password", this.getPassword());
 		prop.setProperty("driver",this.getDriver());
 		prop.setProperty("url", this.getUrl());
+	
 		
 		prop.store(fos,null);
 	}
@@ -127,10 +129,10 @@ public class CConfig
 		prop.setProperty("password","");
 		prop.setProperty("driver","com.mysql.jdbc.Driver");
 		prop.setProperty("url", "jdbc:mysql://localhost/");
-		
+	
 		prop.store(output,null);
 		
-		
+	
 		
 		 
 		

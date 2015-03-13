@@ -62,6 +62,7 @@ public class MainFrame {
 		try 
 		{
 			long nbEnregistrement = transaction.getNombreTupleIslp();
+			// reception de la dernière update
 			labelNbEnregistrement.setText(String.format("%d enregistrement(s) ISLP actuels dans la base", nbEnregistrement));
 			
 			
