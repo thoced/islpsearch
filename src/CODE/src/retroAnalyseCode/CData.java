@@ -8,8 +8,8 @@ public class CData
 	private String numero;
 	private String nom;
 	private String prenom;
-	private String datenaissance;
-	
+	private String datenaissance = new String("00000000"); // force la date de naissance et permet
+	// ainsi d'éviter d'avoir des bugs lorsqu'aucune date n'est reprise dans l'islp
 	
 	public CData(String[] d)
 	{
@@ -66,11 +66,21 @@ public class CData
 		this.setDate(d[2]);
 		this.setNumero(d[3]);
 		// nom
-		this.setNom(d[4]);
+		if(d[4] != null && d[4].length() > 0)
+			this.setNom(d[4]);
+		else
+			this.setNom("Neant");
+		
 		// prenom
-		this.setPrenom(d[5]);
+		if(d[5] != null && d[5].length() > 0)
+			this.setPrenom(d[5]);
+		else
+			this.setPrenom("Neant");
 		// datenaissance
-		this.setDatenaissance(d[6]);
+		if(d[6] != null && d[6].length() > 0)
+			this.setDatenaissance(d[6]);
+		else
+			this.setDatenaissance("00000000");
 		
 	}
 	
