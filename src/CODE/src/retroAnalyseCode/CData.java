@@ -16,8 +16,10 @@ public class CData
 		//if(d.length != 4)
 			//return;
 		
+		 // numero de contact
 		 this.setContact(d[0]);
 		
+		 // type de fiche
 		 String temp  = d[1].trim();
 		 
 			switch(temp)
@@ -62,25 +64,43 @@ public class CData
 				default:  this.setType("????");
 									break;
 			}
-		
+		// date de la fiche
 		this.setDate(d[2]);
+		// numero de la fiche
 		this.setNumero(d[3]);
-		// nom
-		if(d[4] != null && d[4].length() > 0)
-			this.setNom(d[4]);
-		else
-			this.setNom("Neant");
 		
-		// prenom
-		if(d[5] != null && d[5].length() > 0)
-			this.setPrenom(d[5]);
+		if(d.length < 5) 
+			return; // si il n'existe pas de suite
 		else
-			this.setPrenom("Neant");
-		// datenaissance
-		if(d[6] != null && d[6].length() > 0)
-			this.setDatenaissance(d[6]);
+		{
+			// nom
+			if(d[4] != null && d[4].length() > 0)
+				this.setNom(d[4]);
+			else
+				this.setNom("Neant");
+		}
+		
+		if(d.length < 6)
+			return;  // si il n'exise pas de prenom
 		else
-			this.setDatenaissance("00000000");
+		{
+			// prenom
+			if(d[5] != null && d[5].length() > 0)
+				this.setPrenom(d[5]);
+			else
+				this.setPrenom("Neant");
+		}
+		
+		if(d.length < 7) 
+			return;  // si il n'existe pas de date de naissance
+		else
+		{
+			// datenaissance
+			if(d[6] != null && d[6].length() > 0)
+				this.setDatenaissance(d[6]);
+			else
+				this.setDatenaissance("00000000");
+		}
 		
 	}
 	

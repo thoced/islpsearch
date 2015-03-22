@@ -161,8 +161,11 @@ public class dialogRecherche extends JDialog implements ActionListener,MouseList
 	public dialogRecherche(Frame frame,String titre,boolean modal)
 	{
 		super(frame,titre,modal);
-		super.setSize(920, 600);
+		
+		this.setSize(1024, 600);
+		
 		this.setLocationRelativeTo(frame);
+		
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		
@@ -245,7 +248,7 @@ public class dialogRecherche extends JDialog implements ActionListener,MouseList
 		//textResult = new JTextArea();
 		textResult.setFont(new Font("Arial", Font.PLAIN, 12));
 		JScrollPane scrollPaneResult = new JScrollPane(textResult);
-		scrollPaneResult.setBounds(244, 55, 768, 405);
+		scrollPaneResult.setBounds(244, 55, 738, 405);
 		panel.add(scrollPaneResult);
 		
 		buttonPrint = new JButton("Impression");
@@ -274,7 +277,7 @@ public class dialogRecherche extends JDialog implements ActionListener,MouseList
 				
 			}
 		});
-		buttonPrint.setBounds(770, 474, 117, 25);
+		buttonPrint.setBounds(865, 474, 117, 25);
 		panel.add(buttonPrint);
 		
 		labelExemple = new JLabel("ex: 32494123456");
@@ -299,9 +302,6 @@ public class dialogRecherche extends JDialog implements ActionListener,MouseList
 		buttonNettoyer.setBounds(39, 474, 182, 25);
 		panel.add(buttonNettoyer);
 		
-		
-
-	
 		
 
 		this.setVisible(true);

@@ -50,6 +50,7 @@ public class CResultPrint implements Printable
 			 String l = listeTexte[i];
 			 String[] f = l.split("\t");
 			 
+			 			 
 			// création de la date de naissance correcte
 				String annee = f[6].substring(0, 4);
 				String mois = f[6].substring(4,6);

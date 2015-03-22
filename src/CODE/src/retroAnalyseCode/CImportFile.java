@@ -35,7 +35,9 @@ public class CImportFile
 			int cptbar = 0;
 			for(String line : lines)
 			{
+				// mise à jour de la bare de progression
 				diap.getProgressBar().setValue(cptbar);
+				// on lit tous les élements séparés par une tabulation
 				String[] datas = line.split("\t");
 				CData data = new CData(datas);
 				cptbar++;
